@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qys-P7-sJ3">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather LocationVC-->
+        <scene sceneID="0d8-W4-5Nb">
+            <objects>
+                <viewController id="hln-zj-q5u" customClass="WeatherLocationVC" customModule="whatsweather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pme-D0-QeM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YAR-We-qYO">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hln-zj-q5u" id="wfG-lS-ohW"/>
+                                </connections>
+                            </mapView>
+                            <searchBar clipsSubviews="YES" contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="ZHB-y5-Abi">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hln-zj-q5u" id="AtI-Qm-0CH"/>
+                                </connections>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dxv-Yv-OWi" customClass="AppButton" customModule="whatsweather" customModuleProvider="target">
+                                <rect key="frame" x="360" y="154" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="bCR-WD-dtV"/>
+                                    <constraint firstAttribute="width" secondItem="dxv-Yv-OWi" secondAttribute="height" multiplier="1:1" id="eeX-GL-SbO"/>
+                                </constraints>
+                                <state key="normal" image="ic_location">
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="locationButtonTapped" destination="hln-zj-q5u" eventType="touchUpInside" id="d0X-X7-jkL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="YAR-We-qYO" firstAttribute="leading" secondItem="Fex-Qd-m4Q" secondAttribute="leading" id="5vb-EV-AcF"/>
+                            <constraint firstItem="Fex-Qd-m4Q" firstAttribute="trailing" secondItem="YAR-We-qYO" secondAttribute="trailing" id="BcE-aq-CeN"/>
+                            <constraint firstItem="YAR-We-qYO" firstAttribute="top" secondItem="Fex-Qd-m4Q" secondAttribute="top" id="GjL-x8-lUo"/>
+                            <constraint firstItem="ZHB-y5-Abi" firstAttribute="top" secondItem="Fex-Qd-m4Q" secondAttribute="top" id="K01-c4-B2Q"/>
+                            <constraint firstItem="ZHB-y5-Abi" firstAttribute="leading" secondItem="Fex-Qd-m4Q" secondAttribute="leading" id="POC-Nz-rvP"/>
+                            <constraint firstItem="Fex-Qd-m4Q" firstAttribute="trailing" secondItem="dxv-Yv-OWi" secondAttribute="trailing" constant="10" id="Prf-IR-5k1"/>
+                            <constraint firstItem="Fex-Qd-m4Q" firstAttribute="trailing" secondItem="ZHB-y5-Abi" secondAttribute="trailing" id="WJN-UP-WEa"/>
+                            <constraint firstItem="dxv-Yv-OWi" firstAttribute="top" secondItem="ZHB-y5-Abi" secondAttribute="bottom" constant="10" id="m7b-gV-Ee3"/>
+                            <constraint firstAttribute="bottom" secondItem="YAR-We-qYO" secondAttribute="bottom" id="scQ-se-Idb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Fex-Qd-m4Q"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MCy-7i-d7Y"/>
+                    <connections>
+                        <outlet property="locationButton" destination="dxv-Yv-OWi" id="LLf-Ux-psu"/>
+                        <outlet property="mapView" destination="YAR-We-qYO" id="buG-kH-MDF"/>
+                        <outlet property="searchBar" destination="ZHB-y5-Abi" id="NO9-kJ-Cw0"/>
+                        <segue destination="PSD-Rf-YIQ" kind="show" identifier="WeatherDetailVC" id="BKA-84-Fzt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8eU-P4-HxF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1155.072463768116" y="-183.48214285714286"/>
+        </scene>
+        <!--WeatherDetail-->
+        <scene sceneID="nvZ-Om-Pp8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WeatherDetail" id="PSD-Rf-YIQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7H1-yV-JZl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1749" y="-183"/>
+        </scene>
+        <!--Base Navigation Controller-->
+        <scene sceneID="w4E-o1-YEa">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qys-P7-sJ3" customClass="BaseNavigationController" customModule="whatsweather" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7pv-Ue-4nf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hln-zj-q5u" kind="relationship" relationship="rootViewController" id="PKu-Ei-LZN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cOr-VX-0ip" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244.92753623188409" y="-183.48214285714286"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_location" width="292" height="292"/>
+    </resources>
+</document>

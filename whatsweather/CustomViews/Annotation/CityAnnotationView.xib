@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="uDm-TI-kbr" customClass="CityAnnotationView" customModule="whatsweather" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="27" height="60"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_pin_city" translatesAutoresizingMaskIntoConstraints="NO" id="4ti-gX-ysg">
+                    <rect key="frame" x="0.0" y="0.0" width="27" height="37"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="4ti-gX-ysg" secondAttribute="trailing" id="fOa-0h-b3y"/>
+                <constraint firstItem="4ti-gX-ysg" firstAttribute="top" secondItem="uDm-TI-kbr" secondAttribute="top" id="guR-6U-kVH"/>
+                <constraint firstItem="4ti-gX-ysg" firstAttribute="leading" secondItem="uDm-TI-kbr" secondAttribute="leading" id="kvc-hs-Hp1"/>
+                <constraint firstAttribute="bottom" secondItem="4ti-gX-ysg" secondAttribute="bottom" constant="23" id="z0g-QA-sy1"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Z38-nJ-zMG"/>
+            <connections>
+                <outlet property="pinImageView" destination="4ti-gX-ysg" id="bEe-zj-A7y"/>
+            </connections>
+            <point key="canvasLocation" x="-59.200000000000003" y="-145.72713643178412"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_pin_city" width="45" height="60"/>
+    </resources>
+</document>
